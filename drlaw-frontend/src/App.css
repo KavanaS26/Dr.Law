@@ -1,0 +1,15 @@
+.app { max-width: 900px; margin: auto; padding: 16px; font-family: Arial, sans-serif; }
+.app-header { display: flex; justify-content: space-between; align-items: center; }
+.app-main { display: flex; gap: 16px; margin-top: 20px; }
+.side-panel { width: 250px; display: flex; flex-direction: column; gap: 12px; }
+.chat-section { flex: 1; }
+.chat-panel { border: 1px solid #ddd; border-radius: 6px; padding: 10px; display: flex; flex-direction: column; height: 70vh; }
+.messages { flex: 1; overflow-y: auto; margin-bottom: 10px; }
+.msg { margin: 4px 0; padding: 6px 10px; border-radius: 6px; max-width: 80%; }
+.msg.user { background: #cdeffd; align-self: flex-end; }
+.msg.bot { background: #f0f0f0; align-self: flex-start; }
+.composer { display: flex; gap: 8px; }
+.composer input { flex: 1; padding: 8px; }
+button { padding: 8px 12px; background: #007bff; border: none; color: white; border-radius: 4px; cursor: pointer; }
+button:hover { background: #0056b3; }
+.file-upload, .voice-input { border: 1px dashed #aaa; padding: 8px; border-radius: 6px; text-align: center; }
