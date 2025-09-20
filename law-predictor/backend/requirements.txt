@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+faiss-cpu
+sentence-transformers
+transformers
+torch
+ollama
+pydantic
+requests
+beautifulsoup4
+pdfplumber
+tqdm
+scikit-learn
+python-multipart
+joblib
