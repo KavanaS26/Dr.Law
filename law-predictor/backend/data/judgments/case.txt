@@ -1,0 +1,203 @@
+CaseID | CaseType     | IPSection | Winning% | Outcome
+C0001  | Civil        | IPC 420   | 72.45    | Favorable
+C0002  | Criminal     | IPC 302   | 35.12    | Unfavorable
+C0003  | Family       | IPC 498A  | 88.33    | Favorable
+C0004  | Property     | IPC 457   | 46.21    | Unfavorable
+C0005  | Labor        | IPC 354   | 53.87    | Favorable
+C0006  | Consumer     | IPC 272   | 28.92    | Unfavorable
+C0007  | Traffic      | IPC 279   | 64.75    | Favorable
+C0008  | Tax          | IPC 276C  | 49.30    | Unfavorable
+C0009  | Environmental| IPC 268   | 77.55    | Favorable
+C0010  | Corporate    | IPC 409   | 41.88    | Unfavorable
+C0011  | Civil        | IPC 406   | 69.20    | Favorable
+C0012  | Criminal     | IPC 376   | 22.17    | Unfavorable
+C0013  | Family       | IPC 125   | 85.42    | Favorable
+C0014  | Property     | IPC 441   | 33.91    | Unfavorable
+C0015  | Labor        | IPC 188   | 56.44    | Favorable
+C0016  | Consumer     | IPC 272A  | 47.60    | Unfavorable
+C0017  | Traffic      | IPC 337   | 62.11    | Favorable
+C0018  | Tax          | IPC 277   | 38.77    | Unfavorable
+C0019  | Environmental| IPC 277   | 80.25    | Favorable
+C0020  | Corporate    | IPC 420   | 50.00    | Favorable
+C0021  | Civil        | IPC 420   | 71.12    | Favorable
+C0022  | Criminal     | IPC 302   | 29.88    | Unfavorable
+C0023  | Family       | IPC 498A  | 84.50    | Favorable
+C0024  | Property     | IPC 457   | 40.33    | Unfavorable
+C0025  | Labor        | IPC 354   | 58.67    | Favorable
+C0026  | Consumer     | IPC 272   | 46.21    | Unfavorable
+C0027  | Traffic      | IPC 279   | 63.90    | Favorable
+C0028  | Tax          | IPC 276C  | 44.15    | Unfavorable
+C0029  | Environmental| IPC 268   | 79.33    | Favorable
+C0030  | Corporate    | IPC 409   | 39.99    | Unfavorable
+C0031  | Civil        | IPC 406   | 68.77    | Favorable
+C0032  | Criminal     | IPC 307   | 27.88    | Unfavorable
+C0033  | Family       | IPC 125   | 86.21    | Favorable
+C0034  | Property     | IPC 441   | 35.44    | Unfavorable
+C0035  | Labor        | IPC 188   | 54.33    | Favorable
+C0036  | Consumer     | IPC 272A  | 41.67    | Unfavorable
+C0037  | Traffic      | IPC 337   | 60.11    | Favorable
+C0038  | Tax          | IPC 277   | 48.99    | Unfavorable
+C0039  | Environmental| IPC 277   | 81.42    | Favorable
+C0040  | Corporate    | IPC 420   | 42.56    | Unfavorable
+C0041  | Civil        | IPC 420   | 70.44    | Favorable
+C0042  | Criminal     | IPC 376   | 33.22    | Unfavorable
+C0043  | Family       | IPC 498A  | 87.33    | Favorable
+C0044  | Property     | IPC 457   | 39.75    | Unfavorable
+C0045  | Labor        | IPC 354   | 55.88    | Favorable
+C0046  | Consumer     | IPC 272   | 45.12    | Unfavorable
+C0047  | Traffic      | IPC 279   | 61.77    | Favorable
+C0048  | Tax          | IPC 276C  | 46.88    | Unfavorable
+C0049  | Environmental| IPC 268   | 78.99    | Favorable
+C0050  | Corporate    | IPC 409   | 43.21    | Unfavorable
+C0051  | Civil        | IPC 406   | 73.12    | Favorable
+C0052  | Criminal     | IPC 302   | 30.55    | Unfavorable
+C0053  | Family       | IPC 125   | 85.67    | Favorable
+C0054  | Property     | IPC 441   | 37.44    | Unfavorable
+C0055  | Labor        | IPC 188   | 57.33    | Favorable
+C0056  | Consumer     | IPC 272A  | 44.21    | Unfavorable
+C0057  | Traffic      | IPC 337   | 62.88    | Favorable
+C0058  | Tax          | IPC 277   | 48.77    | Unfavorable
+C0059  | Environmental| IPC 277   | 80.99    | Favorable
+C0060  | Corporate    | IPC 420   | 41.56    | Unfavorable
+C0061  | Civil        | IPC 420   | 69.88    | Favorable
+C0062  | Criminal     | IPC 307   | 28.44    | Unfavorable
+C0063  | Family       | IPC 498A  | 86.77    | Favorable
+C0064  | Property     | IPC 457   | 36.11    | Unfavorable
+C0065  | Labor        | IPC 354   | 56.99    | Favorable
+C0066  | Consumer     | IPC 272   | 42.88    | Unfavorable
+C0067  | Traffic      | IPC 279   | 63.33    | Favorable
+C0068  | Tax          | IPC 276C  | 47.22    | Unfavorable
+C0069  | Environmental| IPC 268   | 79.50    | Favorable
+C0070  | Corporate    | IPC 409   | 40.33    | Unfavorable
+C0071  | Civil        | IPC 406   | 71.67    | Favorable
+C0072  | Criminal     | IPC 376   | 31.11    | Unfavorable
+C0073  | Family       | IPC 125   | 84.88    | Favorable
+C0074  | Property     | IPC 441   | 38.22    | Unfavorable
+C0075  | Labor        | IPC 188   | 55.44    | Favorable
+C0076  | Consumer     | IPC 272A  | 43.56    | Unfavorable
+C0077  | Traffic      | IPC 337   | 61.33    | Favorable
+C0078  | Tax          | IPC 277   | 45.99    | Unfavorable
+C0079  | Environmental| IPC 277   | 82.11    | Favorable
+C0080  | Corporate    | IPC 420   | 42.44    | Unfavorable
+C0081  | Civil        | IPC 420   | 70.33    | Favorable
+C0082  | Criminal     | IPC 302   | 29.44    | Unfavorable
+C0083  | Family       | IPC 498A  | 87.55    | Favorable
+C0084  | Property     | IPC 457   | 37.88    | Unfavorable
+C0085  | Labor        | IPC 354   | 58.22    | Favorable
+C0086  | Consumer     | IPC 272   | 46.33    | Unfavorable
+C0087  | Traffic      | IPC 279   | 64.11    | Favorable
+C0088  | Tax          | IPC 276C  | 49.55    | Unfavorable
+C0089  | Environmental| IPC 268   | 81.88    | Favorable
+C0090  | Corporate    | IPC 409   | 44.22    | Unfavorable
+C0091  | Civil        | IPC 406   | 72.44    | Favorable
+C0092  | Criminal     | IPC 307   | 32.11    | Unfavorable
+C0093  | Family       | IPC 125   | 85.99    | Favorable
+C0094  | Property     | IPC 441   | 39.44    | Unfavorable
+C0095  | Labor        | IPC 188   | 57.88    | Favorable
+C0096  | Consumer     | IPC 272A  | 45.77    | Unfavorable
+C0097  | Traffic      | IPC 337   | 63.99    | Favorable
+C0098  | Tax          | IPC 277   | 47.88    | Unfavorable
+C0099  | Environmental| IPC 277   | 80.33    | Favorable
+C0100  | Corporate    | IPC 420   | 42.11    | Unfavorable
+CaseID | CaseType     | IPSection | Winning% | Outcome
+C0101  | Civil        | IPC 406   | 71.22    | Favorable
+C0102  | Criminal     | IPC 302   | 34.88    | Unfavorable
+C0103  | Family       | IPC 498A  | 86.45    | Favorable
+C0104  | Property     | IPC 457   | 42.11    | Unfavorable
+C0105  | Labor        | IPC 354   | 55.99    | Favorable
+C0106  | Consumer     | IPC 272   | 48.44    | Unfavorable
+C0107  | Traffic      | IPC 279   | 63.22    | Favorable
+C0108  | Tax          | IPC 276C  | 47.11    | Unfavorable
+C0109  | Environmental| IPC 268   | 79.77    | Favorable
+C0110  | Corporate    | IPC 409   | 43.88    | Unfavorable
+C0111  | Civil        | IPC 420   | 70.55    | Favorable
+C0112  | Criminal     | IPC 307   | 31.22    | Unfavorable
+C0113  | Family       | IPC 125   | 87.11    | Favorable
+C0114  | Property     | IPC 441   | 38.88    | Unfavorable
+C0115  | Labor        | IPC 188   | 57.44    | Favorable
+C0116  | Consumer     | IPC 272A  | 45.33    | Unfavorable
+C0117  | Traffic      | IPC 337   | 61.88    | Favorable
+C0118  | Tax          | IPC 277   | 46.55    | Unfavorable
+C0119  | Environmental| IPC 277   | 81.22    | Favorable
+C0120  | Corporate    | IPC 420   | 42.77    | Unfavorable
+C0121  | Civil        | IPC 406   | 69.99    | Favorable
+C0122  | Criminal     | IPC 376   | 28.88    | Unfavorable
+C0123  | Family       | IPC 498A  | 85.33    | Favorable
+C0124  | Property     | IPC 457   | 36.44    | Unfavorable
+C0125  | Labor        | IPC 354   | 56.11    | Favorable
+C0126  | Consumer     | IPC 272   | 43.99    | Unfavorable
+C0127  | Traffic      | IPC 279   | 62.55    | Favorable
+C0128  | Tax          | IPC 276C  | 48.11    | Unfavorable
+C0129  | Environmental| IPC 268   | 80.44    | Favorable
+C0130  | Corporate    | IPC 409   | 41.77    | Unfavorable
+C0131  | Civil        | IPC 420   | 71.88    | Favorable
+C0132  | Criminal     | IPC 302   | 32.44    | Unfavorable
+C0133  | Family       | IPC 125   | 86.88    | Favorable
+C0134  | Property     | IPC 441   | 37.55    | Unfavorable
+C0135  | Labor        | IPC 188   | 58.11    | Favorable
+C0136  | Consumer     | IPC 272A  | 44.77    | Unfavorable
+C0137  | Traffic      | IPC 337   | 63.55    | Favorable
+C0138  | Tax          | IPC 277   | 49.22    | Unfavorable
+C0139  | Environmental| IPC 277   | 82.11    | Favorable
+C0140  | Corporate    | IPC 420   | 43.44    | Unfavorable
+C0141  | Civil        | IPC 406   | 70.22    | Favorable
+C0142  | Criminal     | IPC 307   | 30.55    | Unfavorable
+C0143  | Family       | IPC 498A  | 87.44    | Favorable
+C0144  | Property     | IPC 457   | 39.11    | Unfavorable
+C0145  | Labor        | IPC 354   | 55.88    | Favorable
+C0146  | Consumer     | IPC 272   | 46.44    | Unfavorable
+C0147  | Traffic      | IPC 279   | 61.22    | Favorable
+C0148  | Tax          | IPC 276C  | 45.77    | Unfavorable
+C0149  | Environmental| IPC 268   | 78.88    | Favorable
+C0150  | Corporate    | IPC 409   | 44.11    | Unfavorable
+C0151  | Civil        | IPC 420   | 72.33    | Favorable
+C0152  | Criminal     | IPC 302   | 31.77    | Unfavorable
+C0153  | Family       | IPC 125   | 85.99    | Favorable
+C0154  | Property     | IPC 441   | 38.22    | Unfavorable
+C0155  | Labor        | IPC 188   | 57.55    | Favorable
+C0156  | Consumer     | IPC 272A  | 44.88    | Unfavorable
+C0157  | Traffic      | IPC 337   | 62.33    | Favorable
+C0158  | Tax          | IPC 277   | 47.55    | Unfavorable
+C0159  | Environmental| IPC 277   | 80.88    | Favorable
+C0160  | Corporate    | IPC 420   | 42.44    | Unfavorable
+C0161  | Civil        | IPC 406   | 69.55    | Favorable
+C0162  | Criminal     | IPC 376   | 29.11    | Unfavorable
+C0163  | Family       | IPC 498A  | 86.22    | Favorable
+C0164  | Property     | IPC 457   | 36.77    | Unfavorable
+C0165  | Labor        | IPC 354   | 56.44    | Favorable
+C0166  | Consumer     | IPC 272   | 43.55    | Unfavorable
+C0167  | Traffic      | IPC 279   | 63.11    | Favorable
+C0168  | Tax          | IPC 276C  | 48.33    | Unfavorable
+C0169  | Environmental| IPC 268   | 79.99    | Favorable
+C0170  | Corporate    | IPC 409   | 41.88    | Unfavorable
+C0171  | Civil        | IPC 420   | 71.11    | Favorable
+C0172  | Criminal     | IPC 302   | 32.88    | Unfavorable
+C0173  | Family       | IPC 125   | 86.55    | Favorable
+C0174  | Property     | IPC 441   | 37.99    | Unfavorable
+C0175  | Labor        | IPC 188   | 58.44    | Favorable
+C0176  | Consumer     | IPC 272A  | 44.55    | Unfavorable
+C0177  | Traffic      | IPC 337   | 63.88    | Favorable
+C0178  | Tax          | IPC 277   | 49.11    | Unfavorable
+C0179  | Environmental| IPC 277   | 81.55    | Favorable
+C0180  | Corporate    | IPC 420   | 43.22    | Unfavorable
+C0181  | Civil        | IPC 406   | 70.88    | Favorable
+C0182  | Criminal     | IPC 307   | 30.22    | Unfavorable
+C0183  | Family       | IPC 498A  | 87.11    | Favorable
+C0184  | Property     | IPC 457   | 39.33    | Unfavorable
+C0185  | Labor        | IPC 354   | 55.44    | Favorable
+C0186  | Consumer     | IPC 272   | 46.22    | Unfavorable
+C0187  | Traffic      | IPC 279   | 61.99    | Favorable
+C0188  | Tax          | IPC 276C  | 45.33    | Unfavorable
+C0189  | Environmental| IPC 268   | 79.22    | Favorable
+C0190  | Corporate    | IPC 409   | 44.55    | Unfavorable
+C0191  | Civil        | IPC 420   | 72.11    | Favorable
+C0192  | Criminal     | IPC 302   | 31.44    | Unfavorable
+C0193  | Family       | IPC 125   | 85.88    | Favorable
+C0194  | Property     | IPC 441   | 38.55    | Unfavorable
+C0195  | Labor        | IPC 188   | 57.11    | Favorable
+C0196  | Consumer     | IPC 272A  | 44.33    | Unfavorable
+C0197  | Traffic      | IPC 337   | 62.77    | Favorable
+C0198  | Tax          | IPC 277   | 47.44    | Unfavorable
+C0199  | Environmental| IPC 277   | 80.11    | Favorable
+C0200  | Corporate    | IPC 420   | 42.88    | Unfavorable
+
