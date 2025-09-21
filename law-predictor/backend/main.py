@@ -41,7 +41,7 @@ def load_case_data():
         except Exception as e:
             print(f"⚠️ Error loading case data: {e}")
     else:
-        print("⚠️ Case data file not found at ./data/judgements/case.txt")
+        print("⚠️ Case data file not found at ./data/judgments/case.txt")
     
     return case_data
 
@@ -137,6 +137,58 @@ def generate_case_context(relevant_cases):
     
     return context
 
+def format_response_for_markdown(text):
+    """
+    Post-process the response to ensure proper markdown formatting with line breaks
+    """
+    import re
+    
+    # First, normalize line endings
+    text = text.replace('\r\n', '\n').replace('\r', '\n')
+    
+    # Split into lines and process
+    lines = text.split('\n')
+    formatted_lines = []
+    
+    for i, line in enumerate(lines):
+        line = line.strip()
+        
+        # Skip empty lines but preserve them
+        if not line:
+            if formatted_lines and formatted_lines[-1] != '':
+                formatted_lines.append('')
+            continue
+            
+        # Add extra spacing around main headings (##)
+        if line.startswith('##'):
+            # Add blank line before heading if previous line isn't empty
+            if formatted_lines and formatted_lines[-1] != '':
+                formatted_lines.append('')
+            formatted_lines.append(line)
+            formatted_lines.append('')  # Add blank line after heading
+            
+        # Add spacing around numbered items (1., 2., etc.)
+        elif re.match(r'^\d+\.', line):
+            # Add blank line before numbered item
+            if formatted_lines and formatted_lines[-1] != '':
+                formatted_lines.append('')
+            formatted_lines.append(line)
+            formatted_lines.append('')  # Add blank line after numbered item
+            
+        # Handle bullet points - indent them
+        elif line.startswith('*') or line.startswith('-'):
+            formatted_lines.append('   ' + line)  # Indent bullet points
+            
+        # Handle regular paragraphs
+        else:
+            formatted_lines.append(line)
+    
+    # Join lines and clean up multiple consecutive empty lines
+    result = '\n'.join(formatted_lines)
+    result = re.sub(r'\n\s*\n\s*\n+', '\n\n', result)  # Replace 3+ newlines with 2
+    
+    return result.strip()
+
 # --- App Setup ---
 app = FastAPI(title="AI-Powered Legal Assistance Backend")
 
@@ -200,11 +252,44 @@ async def chat(request: dict):
                 case_context = generate_case_context(relevant_cases)
                 print(f"✅ Generated case context: {case_context}")
         
-        # Enhanced system prompt to avoid disclaimers
+        # Enhanced system prompt with formatting instructions
         system_prompt = """You are an expert legal data analyst specializing in Indian law case predictions.
-        When provided with historical case data and statistics, use them to give direct, realistic probability assessments.
-        Start your response with "Based on historical data" when case statistics are provided.
-        Be informative and focus on data-driven analysis rather than disclaimers."""
+
+CRITICAL FORMATTING RULES:
+- Use ## for main headings with blank lines before and after
+- Use numbered lists (1., 2., 3.) with blank lines between each item
+- Use * for bullet points with blank lines between groups
+- Put TWO blank lines between major sections
+- Put ONE blank line after each numbered item before starting bullet points
+- Always end bullet point groups with a blank line
+- Use **bold** for important terms
+
+REQUIRED FORMAT EXAMPLE:
+
+## **Main Section Title**
+
+1. **First Item Name**
+
+* First sub-point here
+* Second sub-point here
+* Third sub-point here
+
+2. **Second Item Name**
+
+* Another sub-point
+* More details here
+
+3. **Third Item Name**
+
+* More information
+* Additional details
+
+
+## **Next Section Title**
+
+Important information here.
+
+Always follow this exact spacing pattern with blank lines for proper markdown rendering."""
         
         user_prompt = message + case_context
         print(f"🔍 Sending to LLM: {user_prompt[:200]}...")
@@ -217,35 +302,65 @@ async def chat(request: dict):
         
         raw_response = response['message']['content']
         print(f"🔍 Raw LLM response: {raw_response}")
-        
-        # Handle multiple disclaimer variations
+
+        # Handle multiple disclaimer variations (same as test_main.py)
         disclaimers_to_replace = [
             "I cannot provide legal advice, but",
             "I can't provide legal advice, but", 
+            "I cannot provide legal advice.",
+            "I can't provide legal advice.",
             "I cannot provide legal advice,",
             "I can't provide legal advice,",
-            "I am not a lawyer, but",
-            "I'm not a lawyer, but",
+            "However, I can offer some general information",
+            "Would that help?",
+            "I cannot provide legal advice. However, I can offer some general information about the Indian Penal Code (IPC)",
+            "I cannot provide legal advice. However,",
+            "However, I can offer some general information about the Indian Penal Code (IPC). Would that help?",
+            "I cannot provide legal advice. However, I can offer some general information about the Indian Penal Code (IPC). Would that help?"
         ]
-        
+
         cleaned_response = raw_response
+        replacement_made = False
+
         for disclaimer in disclaimers_to_replace:
-            cleaned_response = cleaned_response.replace(
-                disclaimer,
-                "Based on available legal data,"
-            )
-        
-        print(f"🔍 Cleaned response: {cleaned_response}")
-        
-        # IMPORTANT: Always include case context if available
+            if disclaimer in raw_response:
+                print(f"🎯 FOUND DISCLAIMER: '{disclaimer}'")
+                cleaned_response = cleaned_response.replace(
+                    disclaimer,
+                    "Based on historical legal data and case analysis,"
+                )
+                replacement_made = True
+                break
+
+        print(f"🔍 Replacement made: {replacement_made}")
+        print(f"🔍 Cleaned response: '{cleaned_response}'")
+
+        # If no replacement was made and it's still a generic response, force a better response
+        if not replacement_made and len(cleaned_response) < 200 and case_context:
+            print("🚨 FORCING BETTER RESPONSE")
+            cleaned_response = "Based on historical legal data and case analysis, here's what the statistics show about similar cases."
+
+        # POST-PROCESS THE RESPONSE FOR BETTER LINE BREAKS
+        cleaned_response = format_response_for_markdown(cleaned_response)
+        print(f"🔍 After formatting: {cleaned_response[:300]}...")
+
+        # Combine historical context + cleaned LLM response
         final_response = ""
         if case_context:
-            final_response = case_context + "\n\n**Analysis:**\n" + cleaned_response
+            # Format case context better
+            formatted_case_context = case_context.replace("📊 **Historical Case Data Analysis:**", "## 📊 **HISTORICAL CASE ANALYSIS**")
+            formatted_case_context = formatted_case_context.replace("**Overall Analysis**", "**Based on")
+            formatted_case_context = formatted_case_context.replace("• Combined Success Rate:", "similar cases, average success rate is")
+            
+            final_response += f"{formatted_case_context}\n\n"
+            final_response += f"## 📋 **LEGAL ANALYSIS**\n\n{cleaned_response}"
         else:
             final_response = cleaned_response
-        
-        print(f"🔍 Final response: {final_response[:200]}...")
-        
+
+        # Add a professional footer
+        final_response += "\n\n---\n\n**⚠️ Disclaimer:** This is general legal information based on historical data. Please consult with a qualified lawyer for specific legal advice."
+
+        print(f"🔍 Final response length: {len(final_response)}")
         return {"response": final_response}
         
     except Exception as e:
@@ -322,3 +437,7 @@ async def predict_case(request: dict):
             
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
