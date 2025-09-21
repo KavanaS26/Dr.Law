@@ -1,4 +1,6 @@
 // Chatbot Interface Component with 3 Input Types
+import ReactMarkdown from 'react-markdown';
+
 const ChatInterface = () => (
   <div className="pt-20 min-h-screen bg-gray-50">
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -31,14 +33,23 @@ const ChatInterface = () => (
               key={index} 
               className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
             >
-              <div className={`max-w-sm p-4 rounded-lg ${
+              <div className={`max-w-3xl p-4 rounded-lg ${
                 message.type === 'user' 
                   ? 'bg-blue-900 text-white' 
                   : 'bg-gray-100 text-gray-800'
               }`}>
                 {message.isFile && <FileText className="w-4 h-4 inline mr-2" />}
-                <p>{message.content}</p>
-                <span className="text-xs opacity-70">{message.timestamp}</span>
+                
+                {/* Use ReactMarkdown for bot responses, regular text for user messages */}
+                {message.type === 'user' ? (
+                  <p>{message.content}</p>
+                ) : (
+                  <div className="message-content">
+                    <ReactMarkdown>{message.content}</ReactMarkdown>
+                  </div>
+                )}
+                
+                <span className="text-xs opacity-70 block mt-2">{message.timestamp}</span>
               </div>
             </div>
           ))}

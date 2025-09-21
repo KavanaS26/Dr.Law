@@ -13,3 +13,253 @@
 button { padding: 8px 12px; background: #007bff; border: none; color: white; border-radius: 4px; cursor: pointer; }
 button:hover { background: #0056b3; }
 .file-upload, .voice-input { border: 1px dashed #aaa; padding: 8px; border-radius: 6px; text-align: center; }
+
+/* Replace your existing .message-content styles with these improved ones */
+
+.message-content {
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* Main headings - more prominent */
+.message-content h2 {
+  color: #1e40af;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #3b82f6;
+  background: linear-gradient(90deg, #eff6ff 0%, transparent 100%);
+  padding-left: 0.5rem;
+}
+
+/* Subheadings */
+.message-content h3 {
+  color: #1f2937;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 1.2rem 0 0.6rem 0;
+  padding-left: 0.3rem;
+  border-left: 3px solid #60a5fa;
+}
+
+/* Bold text - more prominent */
+.message-content strong {
+  color: #1e40af;
+  font-weight: 700;
+  background-color: #f0f9ff;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+/* Paragraphs - better spacing */
+.message-content p {
+  margin: 1rem 0;
+  text-align: justify;
+}
+
+/* Lists - much better organization */
+.message-content ul, .message-content ol {
+  margin: 1rem 0 1.5rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.message-content li {
+  margin: 0.8rem 0;
+  padding: 0.6rem 0.8rem;
+  background: #f8fafc;
+  border-left: 4px solid #e2e8f0;
+  border-radius: 0 6px 6px 0;
+  position: relative;
+  line-height: 1.6;
+}
+
+.message-content li:hover {
+  background: #f1f5f9;
+  border-left-color: #64748b;
+}
+
+/* Add numbers/bullets back */
+.message-content ol {
+  counter-reset: item;
+}
+
+.message-content ol > li {
+  counter-increment: item;
+}
+
+.message-content ol > li:before {
+  content: counter(item) ".";
+  font-weight: bold;
+  color: #3b82f6;
+  position: absolute;
+  left: -1.5rem;
+  top: 0.6rem;
+  background: #dbeafe;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+}
+
+.message-content ul > li:before {
+  content: "•";
+  font-weight: bold;
+  color: #3b82f6;
+  position: absolute;
+  left: -1rem;
+  top: 0.6rem;
+  font-size: 1.2em;
+}
+
+/* Nested lists */
+.message-content ul ul, .message-content ol ol {
+  margin: 0.5rem 0 0.5rem 1rem;
+}
+
+.message-content ul ul li, .message-content ol ol li {
+  background: #ffffff;
+  border-left-color: #cbd5e1;
+  font-size: 0.95em;
+}
+
+/* Horizontal rules - section dividers */
+.message-content hr {
+  margin: 2rem 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+}
+
+/* Important notes section */
+.message-content p:contains("Important Note"),
+.message-content p:contains("Disclaimer") {
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  padding: 0.8rem;
+  margin: 1.5rem 0;
+}
+
+/* First heading spacing fix */
+.message-content h2:first-child {
+  margin-top: 0;
+}
+
+/* Better spacing for disclaimer */
+.message-content hr + p {
+  background: #fee2e2;
+  border: 1px solid #f87171;
+  border-radius: 6px;
+  padding: 0.8rem;
+  font-size: 0.9em;
+  color: #dc2626;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}
+
+/* Better spacing for ordered lists */
+.message-content ol {
+  list-style: none;
+  counter-reset: item;
+  padding-left: 0;
+}
+
+.message-content ol > li {
+  display: block;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f8fafc;
+  border-left: 4px solid #3b82f6;
+  border-radius: 0 8px 8px 0;
+  counter-increment: item;
+  position: relative;
+}
+
+.message-content ol > li:before {
+  content: counter(item) ".";
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #1e40af;
+  position: absolute;
+  left: -2rem;
+  top: 1rem;
+  background: #dbeafe;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bullet points under numbered items */
+.message-content ol li ul {
+  margin: 0.8rem 0 0 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+.message-content ol li ul li {
+  background: #ffffff;
+  border-left: 3px solid #e2e8f0;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.8rem;
+  position: relative;
+}
+
+.message-content ol li ul li:before {
+  content: "•";
+  color: #64748b;
+  font-weight: bold;
+  position: absolute;
+  left: -1.2rem;
+}
+
+.message-content {
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.message-content h2 {
+  color: #1e3a8a;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0.8rem 0 0.5rem 0;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 0.2rem;
+}
+
+.message-content strong {
+  color: #1e40af;
+  font-weight: 700;
+  background-color: #f0f9ff;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.message-content ul, .message-content ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.message-content li {
+  margin: 0.3rem 0;
+  line-height: 1.5;
+}
+
+.message-content p {
+  margin: 0.5rem 0;
+}
+
+.message-content ol {
+  list-style-type: decimal;
+}
+
+.message-content ul {
+  list-style-type: disc;
+}
